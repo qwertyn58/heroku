@@ -15,7 +15,7 @@ def predict():
 
     #getting an array of features from the post request's body
     sk_id = request.args
-    if sk_id in df_clients['SK_ID_CURR'].values:
+    if int(request.args['sk_id']) in df_clients['SK_ID_CURR'].values:
         feature_array = df_clients[df_clients['SK_ID_CURR']==int(request.args['sk_id'])].iloc[:,1:].values
         
         #creating a response object
