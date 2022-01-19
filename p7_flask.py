@@ -28,7 +28,7 @@ def predict():
         #returning the response object as json
         return jsonify(response,model.predict_proba(feature_array)[0,1])
     else :
-        return jsonify(0,'identifiant incorrect')
+        return jsonify('identifiant incorrect')
     
 
 if __name__ == "__main__":
