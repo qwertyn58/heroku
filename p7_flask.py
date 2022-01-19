@@ -21,6 +21,7 @@ def predict():
         #creating a response object
         #storing the model's prediction in the object
         response = {}
+        response['seuil']=seuil
         if model.predict_proba(feature_array)[0,1]>seuil:
             response['predictions'] = 1
         else:
