@@ -26,7 +26,7 @@ def predict():
         else:
             response['predictions'] = 0   
         #returning the response object as json
-        return jsonify(response,model.predict_proba(feature_array)[0,1])
+        return jsonify(response,model.predict_proba(feature_array)[0,0])
     else :
         return jsonify('identifiant incorrect')
     
